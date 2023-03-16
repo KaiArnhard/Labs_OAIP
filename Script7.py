@@ -35,18 +35,20 @@ def decimal_to_bin(x):
 
 try:
     GPIO.setup(dac, GPIO.OUT)
-    
+    x = get_number()
+    y = x / 512
+
     while 1:
         for i in range(256):
             decimal_to_bin(i)
             GPIO.output(dac, list1)
-            time.sleep(0.3)
+            time.sleep(y)
+        
         for k in range(256):
             decimal_to_bin(255 - k)
             GPIO.output(dac, list1)
-            time.sleep(0.3)
+            time.sleep(y)
             
-
 finally:
     GPIO.output(dac, 0)
     GPIO.cleanup()       

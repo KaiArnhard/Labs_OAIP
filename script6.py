@@ -35,17 +35,18 @@ def decimal_to_bin(x):
 
 try:
     GPIO.setup(dac, GPIO.OUT)
+    while 1:
     
-    x = get_number()
+        x = get_number()
 
-    volt = x * (5 / 255)
-    print("Voltage", volt) 
-    
-    x = decimal_to_bin(x)
+        volt = x * (3.3 / 255)
+        print("Voltage", volt) 
+        
+        x = decimal_to_bin(x)
 
-    GPIO.output(dac, list1)
+        GPIO.output(dac, list1)
 
-    time.sleep(3)
+        time.sleep(3)
 
 finally:
     GPIO.output(dac, 0)
