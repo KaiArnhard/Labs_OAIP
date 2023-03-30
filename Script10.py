@@ -43,7 +43,7 @@ def decimal_to_bin(x):
 def adc():
     sum = 0
     value = 0
-    for k in range(7, 0, -1):
+    for k in range(7, -1, -1):
         value = 2 ** k
         sum += value
         list1 = decimal_to_bin(sum)
